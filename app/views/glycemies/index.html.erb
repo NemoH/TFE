@@ -1,0 +1,33 @@
+<h1>Listing glycemies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Valeur</th>
+      <th>Note</th>
+      <th>Users</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @glycemies.each do |glycemy| %>
+      <tr>
+        <td><%= glycemy.valeur %></td>
+        <td><%= glycemy.note %></td>
+        <td><%= glycemy.users %></td>
+        <td><%= glycemy.date %></td>
+        <td><%= link_to 'Show', glycemy %></td>
+        <td><%= link_to 'Edit', edit_glycemy_path(glycemy) %></td>
+        <td><%= link_to 'Destroy', glycemy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Glycemy', new_glycemy_path %>

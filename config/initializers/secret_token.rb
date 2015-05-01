@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Tfe2::Application.config.secret_key_base = '8ce2ee3905b25ff65731f25187e1d21dcc4c71f35269e83efa23242f9699b625f58d5efdedc814d9cf49cfaf64d43fa9521862ebe0c3b79a03bf5c67e5cdf4a2'
+Tfe2::Application.config.secret_key_base = '6ff39a6defd1c2d215ad55291d05f40c0008564d0ae5cfd4cb25ac40588bda7f1415263917a9621e99c0dbbcefaaa878d14dcc9887490c6244a0fa0930b6261e'

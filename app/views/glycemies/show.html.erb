@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Valeur:</strong>
+  <%= @glycemy.valeur %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @glycemy.note %>
+</p>
+
+<p>
+  <strong>Users:</strong>
+  <%= @glycemy.users %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @glycemy.date %>
+</p>
+
+<%= link_to 'Edit', edit_glycemy_path(@glycemy) %> |
+<%= link_to 'Back', glycemies_path %>
