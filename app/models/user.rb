@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
  # attr_accessible :email, :password, :password_confirmation, :remember_me, :username
   # attr_accessible :title, :body
 	has_many :articles
+  has_many :glycemies
 	validates :password, presence: true,
 	length: {minimum: 8}
 	validates :email, presence: true
