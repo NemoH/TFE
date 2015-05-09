@@ -1,18 +1,21 @@
 class GlycemiesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_glycemy, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
-  def create
-      @glycemy.users_id = current_user.id
-  end
 
   def index
     @glycemies = Glycemy.all
     respond_with(@glycemies)
   end
 
+  def new
+    @ask.user_id = current_user.id
+  end
+
   def show
+    
     respond_with(@glycemy)
   end
 
@@ -27,6 +30,9 @@ class GlycemiesController < ApplicationController
   def create
     @glycemy = Glycemy.new(glycemy_params)
     @glycemy.save
+    @user = current_user
+    @glycemy.set_user!(current_user)
+    @glycemy.user_id = current_user.id
     respond_with(@glycemy)
   end
 

@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   def self.current=(user)
       Thread.current[:user] = user
   end
-  
+  #attr_accessible :email, :password; :password_confirmation, :remember_me, :username
   def login
     @login || self.username || self.email
   end
