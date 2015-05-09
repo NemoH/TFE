@@ -3,6 +3,10 @@ class GlycemiesController < ApplicationController
 
   respond_to :html
 
+  def create
+      @glycemy.users_id = current_user.id
+  end
+
   def index
     @glycemies = Glycemy.all
     respond_with(@glycemies)

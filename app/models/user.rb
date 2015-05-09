@@ -16,6 +16,14 @@ class User < ActiveRecord::Base
     @login = login
   end
 
+  def self.current
+      Thread.current[:user]
+  end 
+
+  def self.current=(user)
+      Thread.current[:user] = user
+  end
+  
   def login
     @login || self.username || self.email
   end
