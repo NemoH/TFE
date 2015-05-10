@@ -4,4 +4,5 @@ class Glycemy < ActiveRecord::Base
   	self.user_id = user.id
   	self.save!
   end
+  
 end

@@ -6,8 +6,12 @@ class GlycemiesController < ApplicationController
 
 
   def index
-    @glycemies = Glycemy.all
+    #@glycemies = Glycemy.all
+    @glycemies = Glycemy.where(:user_id => current_user.id)
     respond_with(@glycemies)
+
+    
+  
   end
 
   def new
@@ -15,7 +19,7 @@ class GlycemiesController < ApplicationController
   end
 
   def show
-    
+
     respond_with(@glycemy)
   end
 

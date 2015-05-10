@@ -16,7 +16,7 @@
   </thead>
   <tbody>
   
-    <% @glycemies.each do |glycemy| %>
+    <% @glycemies.each do |glycemy|  %>
       <tr>
         <td><%= link_to glycemy.id, glycemy_path(glycemy) %></td>
         <td><%= glycemy.valeur %></td>
