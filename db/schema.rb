@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501175123) do
+ActiveRecord::Schema.define(version: 20150511134835) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -34,13 +34,25 @@ ActiveRecord::Schema.define(version: 20150501175123) do
   create_table "glycemies", force: true do |t|
     t.integer  "valeur"
     t.string   "note"
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "glycemies", ["users_id"], name: "index_glycemies_on_users_id", using: :btree
+  add_index "glycemies", ["user_id"], name: "index_glycemies_on_users_id", using: :btree
+
+  create_table "insulines", force: true do |t|
+    t.string   "name"
+    t.integer  "unit"
+    t.date     "date"
+    t.string   "note"
+    t.integer  "users_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "insulines", ["users_id"], name: "index_insulines_on_users_id", using: :btree
 
   create_table "users", force: true do |t|
     t.datetime "created_at",                          null: false

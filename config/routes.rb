@@ -1,4 +1,7 @@
 Tfe2::Application.routes.draw do
+  resources :insulines
+
+  get "graphs/hello"
   get "welcome/index"
   resources :glycemies
 
