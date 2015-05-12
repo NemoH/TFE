@@ -57,3 +57,4 @@ gem 'active_median', '~> 0.1.0'
 
 gem 'roo', '~> 2.0.0'
 
+gem 'kaminari'

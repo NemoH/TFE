@@ -5,10 +5,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+     <!-- <th><%= model_class.human_attribute_name(:id) %></th>-->
       <th><%= model_class.human_attribute_name(:valeur) %></th>
       <th><%= model_class.human_attribute_name(:note) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <!--<th><%= model_class.human_attribute_name(:user_id) %></th>-->
       <th><%= model_class.human_attribute_name(:date) %></th>
       
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -18,10 +18,10 @@
   
     <% @glycemies.each do |glycemy|  %>
       <tr>
-        <td><%= link_to glycemy.id, glycemy_path(glycemy) %></td>
+        <!--<td><%= link_to glycemy.id, glycemy_path(glycemy) %></td>-->
         <td><%= glycemy.valeur %></td>
         <td><%= glycemy.note %></td>
-        <td><%= glycemy.user_id %></td>
+        <!--<td><%= glycemy.user_id %></td>-->
         <td><%= glycemy.date %></td>
         
         <td>
@@ -37,10 +37,14 @@
     <% end %>
   </tbody>
 </table>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_glycemy_path,
+            :class => 'btn btn-primary' %>
 <h3>Number of tests per day</h3>
-<%= line_chart Glycemy.where(:user_id => current_user.id).group_by_day(:created_at).count %>
-<h3>Number of tests per day</h3>
-<%= line_chart Glycemy.where(:user_id => current_user.id).group_by_day(:created_at).count %>
+<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date).count %>
+<h3>Average value of the tests per day</h3>
+
+<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date).average(:valeur), {library: {hAxis: {title: "Date", format: 'd MMM y'}, vAxis: {title: "Average"}}} %>
 
 <h2> Import glycemies </h2>
 
@@ -48,6 +52,3 @@
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
 <% end %>
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_glycemy_path,
-            :class => 'btn btn-primary' %>
