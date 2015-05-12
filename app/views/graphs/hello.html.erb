@@ -1,5 +1,7 @@
 <h1>Graphs#hello</h1>
-<p>sup</p>
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-<%= pie_chart({"Football" => 10, "Basketball" => 5}) %>
-<%= line_chart Glycemy.group_by_day(:created_at).count %>
+<h3>Number of tests per day</h3>
+<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date).count %>
+<h3>Average value of the tests per day</h3>
+
+<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date).average(:valeur), {library: {hAxis: {title: "Date", format: 'd MMM y'}, vAxis: {title: "Average"}}} %>

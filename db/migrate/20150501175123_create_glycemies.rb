@@ -5,6 +5,8 @@ class CreateGlycemies < ActiveRecord::Migration
       t.string :note
       t.references :users, index: true
       t.datetime :date
+      t.boolean :hyper
+      t.boolean :hypo
 
       t.timestamps
     end

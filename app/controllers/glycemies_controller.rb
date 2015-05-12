@@ -38,6 +38,7 @@ class GlycemiesController < ApplicationController
     @glycemy.set_user!(current_user)
     @glycemy.user_id = current_user.id
     respond_with(@glycemy)
+    
   end
 
   def update

@@ -40,11 +40,7 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_glycemy_path,
             :class => 'btn btn-primary' %>
-<h3>Number of tests per day</h3>
-<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date).count %>
-<h3>Average value of the tests per day</h3>
 
-<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date).average(:valeur), {library: {hAxis: {title: "Date", format: 'd MMM y'}, vAxis: {title: "Average"}}} %>
 
 <h2> Import glycemies </h2>
 

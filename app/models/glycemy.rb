@@ -1,6 +1,9 @@
 class Glycemy < ActiveRecord::Base
 require 'csv'
 belongs_to :user
+validates :valeur, presence: true,
+			length: {maximum: 4}
+validates :note, length: {maximum: 250}
 def set_user!(user)
   	self.user_id = user.id
   	self.save!
