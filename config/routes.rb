@@ -3,7 +3,9 @@ Tfe2::Application.routes.draw do
 
   get "graphs/hello"
   get "welcome/index"
-  resources :glycemies
+  resources :glycemies do
+    collection { post :import}
+  end
 
   devise_for :users
   resources :articles do

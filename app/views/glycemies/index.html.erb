@@ -37,7 +37,17 @@
     <% end %>
   </tbody>
 </table>
+<h3>Number of tests per day</h3>
+<%= line_chart Glycemy.where(:user_id => current_user.id).group_by_day(:created_at).count %>
+<h3>Number of tests per day</h3>
+<%= line_chart Glycemy.where(:user_id => current_user.id).group_by_day(:created_at).count %>
 
+<h2> Import glycemies </h2>
+
+<%= form_tag import_glycemies_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_glycemy_path,
             :class => 'btn btn-primary' %>

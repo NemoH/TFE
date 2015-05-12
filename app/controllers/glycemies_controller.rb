@@ -50,6 +50,8 @@ class GlycemiesController < ApplicationController
     respond_with(@glycemy)
   end
 
+  
+
   private
     def set_glycemy
       @glycemy = Glycemy.find(params[:id])
