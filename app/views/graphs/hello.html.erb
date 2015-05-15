@@ -5,3 +5,7 @@
 <h3>Average value of the tests per day</h3>
 
 <%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date).average(:valeur), {library: {hAxis: {title: "Date", format: 'd MMM y'}, vAxis: {title: "Average"}}} %>
+
+<h3>% in the zone</h3>
+
+<%= pie_chart Glycemy.where(:user_id => current_user.id).group(:hyper).group(:hypo).count %>

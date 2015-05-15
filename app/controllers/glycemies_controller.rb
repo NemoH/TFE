@@ -3,7 +3,8 @@ class GlycemiesController < ApplicationController
   before_action :set_glycemy, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
-
+  X_VALUE = 180
+  Y_VALUE = 80
 
   def index
     #@glycemies = Glycemy.all
@@ -37,9 +38,14 @@ class GlycemiesController < ApplicationController
     @user = current_user
     @glycemy.set_user!(current_user)
     @glycemy.user_id = current_user.id
-    respond_with(@glycemy)
-    
+    @glycemy.hyper = true if @glycemy.valeur > X_VALUE
+    @glycemy.hypo = true if @glycemy.valeur < Y_VALUE
+    @glycemy.save
+    respond_with(@glycemy) 
   end
+
+  
+
 
   def update
     @glycemy.update(glycemy_params)
