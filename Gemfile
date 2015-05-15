@@ -4,7 +4,14 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use mysql as the database for Active Record
-gem 'mysql2'
+group :production do
+	gem 'pg'
+end
+group :development do
+	gem 'mysql2'
+end
+
+
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
