@@ -3,7 +3,7 @@ class CreateGlycemies < ActiveRecord::Migration
     create_table :glycemies do |t|
       t.integer :valeur
       t.string :note
-      t.references :users, index: true
+      t.references :user, index: true
       t.datetime :date
       t.boolean :hyper
       t.boolean :hypo

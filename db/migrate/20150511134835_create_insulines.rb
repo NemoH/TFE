@@ -5,7 +5,7 @@ class CreateInsulines < ActiveRecord::Migration
       t.integer :unit
       t.date :date
       t.string :note
-      t.references :users, index: true
+      t.references :user, index: true
       t.timestamps
     end
   end

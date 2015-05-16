@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20150511134835) do
     t.datetime "updated_at"
   end
 
+  add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
+
   create_table "comments", force: true do |t|
     t.string   "commenter"
     t.text     "body"
@@ -38,6 +40,8 @@ ActiveRecord::Schema.define(version: 20150511134835) do
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "hyper"
+    t.boolean  "hypo"
   end
 
   add_index "glycemies", ["user_id"], name: "index_glycemies_on_users_id", using: :btree
@@ -47,12 +51,12 @@ ActiveRecord::Schema.define(version: 20150511134835) do
     t.integer  "unit"
     t.date     "date"
     t.string   "note"
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "insulines", ["users_id"], name: "index_insulines_on_users_id", using: :btree
+  add_index "insulines", ["user_id"], name: "index_insulines_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.datetime "created_at",                          null: false
