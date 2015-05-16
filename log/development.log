@@ -83793,3 +83793,186 @@ Processing by InsulinesController#index as HTML
   Rendered insulines/index.html.erb within layouts/application (4.5ms)
   Rendered layouts/_user_header.html.erb (0.3ms)
 Completed 200 OK in 64ms (Views: 61.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/insulines" for 192.168.0.18 at 2015-05-16 11:51:35 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by InsulinesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mInsuline Load (0.5ms)[0m  [1mSELECT `insulines`.* FROM `insulines` WHERE `insulines`.`user_id` = 2[0m
+  Rendered insulines/index.html.erb within layouts/application (125.8ms)
+  Rendered layouts/_user_header.html.erb (2.1ms)
+Completed 200 OK in 1179ms (Views: 1110.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/articles.css?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/insulines.css?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/graphs.css?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/comments.css?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/users.css?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/welcome.css?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:36 +0200
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/jsapi.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/chartkick.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/articles.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/glycemies.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/comments.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:37 +0200
+
+
+Started GET "/assets/graphs.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:38 +0200
+
+
+Started GET "/assets/insulines.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:38 +0200
+
+
+Started GET "/assets/welcome.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:38 +0200
+
+
+Started GET "/assets/users.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:38 +0200
+
+
+Started GET "/assets/application.js?body=1" for 192.168.0.18 at 2015-05-16 11:51:38 +0200
+
+
+Started GET "/images/favicon.ico" for 192.168.0.18 at 2015-05-16 11:51:38 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bertrand/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/bertrand/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/bertrand/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/bertrand/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/bertrand/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.8ms)
+  Rendered /home/bertrand/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.7ms)
+  Rendered /home/bertrand/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (69.4ms)
+
+
+Started GET "/welcome/index" for 192.168.0.18 at 2015-05-16 11:51:39 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered layouts/_user_header.html.erb (3.0ms)
+Completed 200 OK in 75ms (Views: 73.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/glycemies" for 192.168.0.18 at 2015-05-16 11:51:40 +0200
+Processing by GlycemiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mGlycemy Load (0.4ms)[0m  SELECT `glycemies`.* FROM `glycemies` WHERE `glycemies`.`user_id` = 2
+  Rendered glycemies/index.html.erb within layouts/application (21.5ms)
+  Rendered layouts/_user_header.html.erb (0.4ms)
+Completed 200 OK in 128ms (Views: 109.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/graphs/hello" for 192.168.0.18 at 2015-05-16 11:51:41 +0200
+Processing by GraphsController#hello as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (119.3ms)[0m  SELECT COUNT(*) AS count_all, DATE_ADD(CONVERT_TZ(DATE_FORMAT(CONVERT_TZ(DATE_SUB(`date`, INTERVAL 0 HOUR), '+00:00', 'Europe/Brussels'), '%Y-%m-%d 00:00:00'), 'Europe/Brussels', '+00:00'), INTERVAL 0 HOUR) AS day FROM `glycemies` WHERE `glycemies`.`user_id` = 2 AND (`date` IS NOT NULL) GROUP BY DATE_ADD(CONVERT_TZ(DATE_FORMAT(CONVERT_TZ(DATE_SUB(`date`, INTERVAL 0 HOUR), '+00:00', 'Europe/Brussels'), '%Y-%m-%d 00:00:00'), 'Europe/Brussels', '+00:00'), INTERVAL 0 HOUR)
+  [1m[36m (0.7ms)[0m  [1mSELECT AVG(`glycemies`.`valeur`) AS average_valeur, DATE_ADD(CONVERT_TZ(DATE_FORMAT(CONVERT_TZ(DATE_SUB(`date`, INTERVAL 0 HOUR), '+00:00', 'Europe/Brussels'), '%Y-%m-%d 00:00:00'), 'Europe/Brussels', '+00:00'), INTERVAL 0 HOUR) AS day FROM `glycemies` WHERE `glycemies`.`user_id` = 2 AND (`date` IS NOT NULL) GROUP BY DATE_ADD(CONVERT_TZ(DATE_FORMAT(CONVERT_TZ(DATE_SUB(`date`, INTERVAL 0 HOUR), '+00:00', 'Europe/Brussels'), '%Y-%m-%d 00:00:00'), 'Europe/Brussels', '+00:00'), INTERVAL 0 HOUR)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) AS count_all, hyper AS hyper, hypo AS hypo FROM `glycemies` WHERE `glycemies`.`user_id` = 2 GROUP BY hyper, hypo
+  Rendered graphs/hello.html.erb within layouts/application (136.1ms)
+  Rendered layouts/_user_header.html.erb (0.5ms)
+Completed 200 OK in 222ms (Views: 100.0ms | ActiveRecord: 120.6ms)
