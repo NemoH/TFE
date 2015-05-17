@@ -1,4 +1,5 @@
 Tfe2::Application.routes.draw do
+  get "injections/index"
   resources :results
 
   resources :prisedesangs
