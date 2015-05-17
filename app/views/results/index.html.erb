@@ -1,0 +1,33 @@
+<h1>Listing results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hb</th>
+      <th>Hb</th>
+      <th>Note</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @results.each do |result| %>
+      <tr>
+        <td><%= result.hb %></td>
+        <td><%= result.hb %></td>
+        <td><%= result.note %></td>
+        <td><%= result.date %></td>
+        <td><%= link_to 'Show', result %></td>
+        <td><%= link_to 'Edit', edit_result_path(result) %></td>
+        <td><%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Result', new_result_path %>

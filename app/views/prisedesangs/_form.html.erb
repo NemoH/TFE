@@ -1,0 +1,25 @@
+<%= form_for(@prisedesang) do |f| %>
+  <% if @prisedesang.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prisedesang.errors.count, "error") %> prohibited this prisedesang from being saved:</h2>
+
+      <ul>
+      <% @prisedesang.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rdv %><br>
+    <%= f.datetime_select :rdv %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_area :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

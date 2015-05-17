@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
 	has_many :articles
   has_many :glycemies
   has_many :insulines
+  has_many :profiles
+  has_many :medecins
+  has_many :oculistes
+  has_many :prisedesangs
+  has_many :results
 	validates :password, presence: true,
 	length: {minimum: 8}
 	validates :email, presence: true

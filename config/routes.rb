@@ -1,4 +1,12 @@
 Tfe2::Application.routes.draw do
+  resources :results
+
+  resources :prisedesangs
+
+  resources :oculistes
+
+  resources :medecins
+
   resources :insulines
 
   get "graphs/hello"

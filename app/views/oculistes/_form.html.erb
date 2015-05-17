@@ -1,0 +1,25 @@
+<%= form_for(@oculiste) do |f| %>
+  <% if @oculiste.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@oculiste.errors.count, "error") %> prohibited this oculiste from being saved:</h2>
+
+      <ul>
+      <% @oculiste.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rdv %><br>
+    <%= f.datetime_select :rdv %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_area :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

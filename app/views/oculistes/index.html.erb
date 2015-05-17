@@ -1,0 +1,29 @@
+<h1>Listing oculistes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rdv</th>
+      <th>Note</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oculistes.each do |oculiste| %>
+      <tr>
+        <td><%= oculiste.rdv %></td>
+        <td><%= oculiste.note %></td>
+        <td><%= link_to 'Show', oculiste %></td>
+        <td><%= link_to 'Edit', edit_oculiste_path(oculiste) %></td>
+        <td><%= link_to 'Destroy', oculiste, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Oculiste', new_oculiste_path %>

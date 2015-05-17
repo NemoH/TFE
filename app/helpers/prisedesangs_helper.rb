@@ -1,0 +1,2 @@
+module PrisedesangsHelper
+end

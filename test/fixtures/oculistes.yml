@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rdv: 2015-05-17 11:14:37
+  note: MyText
+
+two:
+  rdv: 2015-05-17 11:14:37
+  note: MyText

@@ -1,0 +1,29 @@
+<h1>Listing prisedesangs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rdv</th>
+      <th>Note</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prisedesangs.each do |prisedesang| %>
+      <tr>
+        <td><%= prisedesang.rdv %></td>
+        <td><%= prisedesang.note %></td>
+        <td><%= link_to 'Show', prisedesang %></td>
+        <td><%= link_to 'Edit', edit_prisedesang_path(prisedesang) %></td>
+        <td><%= link_to 'Destroy', prisedesang, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prisedesang', new_prisedesang_path %>

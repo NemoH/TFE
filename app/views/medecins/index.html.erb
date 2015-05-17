@@ -1,0 +1,29 @@
+<h1>Listing medecins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rdv</th>
+      <th>Note</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medecins.each do |medecin| %>
+      <tr>
+        <td><%= medecin.rdv %></td>
+        <td><%= medecin.note %></td>
+        <td><%= link_to 'Show', medecin %></td>
+        <td><%= link_to 'Edit', edit_medecin_path(medecin) %></td>
+        <td><%= link_to 'Destroy', medecin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medecin', new_medecin_path %>

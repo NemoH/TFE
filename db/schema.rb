@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511134835) do
+ActiveRecord::Schema.define(version: 20150517091812) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -57,6 +57,47 @@ ActiveRecord::Schema.define(version: 20150511134835) do
   end
 
   add_index "insulines", ["user_id"], name: "index_insulines_on_user_id", using: :btree
+
+  create_table "medecins", force: true do |t|
+    t.datetime "rdv"
+    t.text     "note"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "medecins", ["user_id"], name: "index_medecins_on_user_id", using: :btree
+
+  create_table "oculistes", force: true do |t|
+    t.datetime "rdv"
+    t.text     "note"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "oculistes", ["user_id"], name: "index_oculistes_on_user_id", using: :btree
+
+  create_table "prisedesangs", force: true do |t|
+    t.datetime "rdv"
+    t.text     "note"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "prisedesangs", ["user_id"], name: "index_prisedesangs_on_user_id", using: :btree
+
+  create_table "results", force: true do |t|
+    t.decimal  "hb",         precision: 10, scale: 0
+    t.text     "note"
+    t.datetime "date"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "results", ["user_id"], name: "index_results_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.datetime "created_at",                          null: false
