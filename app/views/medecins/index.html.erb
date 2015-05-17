@@ -1,29 +1,40 @@
-<h1>Listing medecins</h1>
-
-<table>
+<%- model_class = Medecin -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Rdv</th>
-      <th>Note</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
+      <th><%= model_class.human_attribute_name(:rdv) %></th>
+      <th><%= model_class.human_attribute_name(:note) %></th>
+      <!--<th><%= model_class.human_attribute_name(:user_id) %></th>-->
+      <!--<th><%= model_class.human_attribute_name(:created_at) %></th>-->
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @medecins.each do |medecin| %>
       <tr>
+        <!--<td><%= link_to medecin.id, medecin_path(medecin) %></td>-->
         <td><%= medecin.rdv %></td>
         <td><%= medecin.note %></td>
-        <td><%= link_to 'Show', medecin %></td>
-        <td><%= link_to 'Edit', edit_medecin_path(medecin) %></td>
-        <td><%= link_to 'Destroy', medecin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!--<td><%= medecin.user_id %></td>-->
+        <!--<td><%=l medecin.created_at %></td>-->
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_medecin_path(medecin), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      medecin_path(medecin),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Medecin', new_medecin_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_medecin_path,
+            :class => 'btn btn-primary' %>

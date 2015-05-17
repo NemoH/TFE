@@ -1,25 +1,21 @@
-<%= form_for(@oculiste) do |f| %>
-  <% if @oculiste.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@oculiste.errors.count, "error") %> prohibited this oculiste from being saved:</h2>
-
-      <ul>
-      <% @oculiste.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @oculiste, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :rdv, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :rdv, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :note, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :note, :class => 'text_field' %>
+    </div>
+  </div>
+  <%= hidden_field :user_id, value: @user.try(:id) %>
 
-  <div class="field">
-    <%= f.label :rdv %><br>
-    <%= f.datetime_select :rdv %>
-  </div>
-  <div class="field">
-    <%= f.label :note %><br>
-    <%= f.text_area :note %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                oculistes_path, :class => 'btn' %>
   </div>
 <% end %>
