@@ -8,7 +8,13 @@ class ApplicationController < ActionController::Base
   #  User.current = set_current_user
   #end
   protected
+  def new
+    @ask.user_id = current_user.id
+  end
 
+  def admin?
+    self.admin == true
+  end
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :username, :email, :password, :remember_me) }
