@@ -5,7 +5,7 @@ class InsulinesController < ApplicationController
 
   def index
     #@insulines = Insuline.all
-    @insulines = Insuline.where(:user_id => current_user.id)
+    @insulines = Insuline.where(:user_id => current_user.id).page(params[:page]).per(10)
     respond_with(@insulines)
   end
 
@@ -16,6 +16,7 @@ class InsulinesController < ApplicationController
   def new
     @ask.user_id = current_user.id
   end
+  
   def new
     @insuline = Insuline.new
     respond_with(@insuline)

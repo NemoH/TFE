@@ -5,7 +5,7 @@ class MedecinsController < ApplicationController
 
   def index
     #@medecins = Medecin.all
-    @medecins = Medecin.where(:user_id => current_user.id)
+    @medecins = Medecin.where(:user_id => current_user.id).page(params[:page]).per(10)
     respond_with(@medecins)
   end
 

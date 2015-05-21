@@ -5,7 +5,7 @@ class OculistesController < ApplicationController
 
   def index
     #@oculistes = Oculiste.all
-    @oculistes = Oculiste.where(:user_id => current_user.id)
+    @oculistes = Oculiste.where(:user_id => current_user.id).page(params[:page]).per(10)
     respond_with(@oculistes)
   end
 

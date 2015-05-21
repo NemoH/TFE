@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     #@articles = Article.all
-    @articles = Article.where(:user_id => current_user.id)
+    @articles = Article.where(:user_id => current_user.id).page(params[:page]).per(10)
   end
 
   # GET /articles/1

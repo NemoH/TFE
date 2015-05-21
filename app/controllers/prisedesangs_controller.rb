@@ -5,7 +5,7 @@ class PrisedesangsController < ApplicationController
 
   def index
     #@prisedesangs = Prisedesang.all
-    @prisedesangs = Prisedesang.where(:user_id => current_user.id)
+    @prisedesangs = Prisedesang.where(:user_id => current_user.id).page(params[:page]).per(10)
     respond_with(@prisedesangs)
   end
 

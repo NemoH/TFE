@@ -8,11 +8,9 @@ class GlycemiesController < ApplicationController
 
   def index
     #@glycemies = Glycemy.all
-    @glycemies = Glycemy.where(:user_id => current_user.id)
-    respond_with(@glycemies)
+    @glycemies = Glycemy.where(:user_id => current_user.id).page(params[:page]).per(10)
 
-    
-  
+    respond_with(@glycemies)
   end
 
   def new
@@ -45,7 +43,10 @@ class GlycemiesController < ApplicationController
   end
 
   
-
+  def import
+    Glycemy.import(params[:file])
+    redirect_to root_url, notice: "Glycemies imported."
+  end
 
   def update
     @glycemy.update(glycemy_params)
@@ -58,6 +59,8 @@ class GlycemiesController < ApplicationController
   end
 
   
+
+
 
   private
     def set_glycemy

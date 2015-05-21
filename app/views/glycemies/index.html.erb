@@ -6,10 +6,11 @@
             new_glycemy_path,
             :class => 'btn btn-primary' %>
 
-
+<%= paginate @glycemies %>
 <table class="table table-striped">
   <thead>
     <tr>
+
      <!-- <th><%= model_class.human_attribute_name(:id) %></th>-->
       <th><%= model_class.human_attribute_name(:valeur) %></th>
       <th><%= model_class.human_attribute_name(:note) %></th>
@@ -23,6 +24,7 @@
   
     <% @glycemies.each do |glycemy|  %>
       <tr>
+      
         <!--<td><%= link_to glycemy.id, glycemy_path(glycemy) %></td>-->
         <td><%= glycemy.valeur %></td>
         <td><%= glycemy.note %></td>
@@ -53,3 +55,4 @@
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
 <% end %>
+

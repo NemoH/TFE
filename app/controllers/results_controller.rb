@@ -5,7 +5,7 @@ class ResultsController < ApplicationController
 
   def index
     #@results = Result.all
-    @results = Result.where(:user_id => current_user.id)
+    @results = Result.where(:user_id => current_user.id).page(params[:page]).per(10)
     respond_with(@results)
   end
 
