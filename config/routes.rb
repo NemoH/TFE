@@ -1,4 +1,6 @@
 Tfe2::Application.routes.draw do
+  get "injectionother/hello"
+  get "injectionleg/hello"
   get "injections/index"
   resources :results
 
