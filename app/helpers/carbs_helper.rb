@@ -1,0 +1,2 @@
+module CarbsHelper
+end

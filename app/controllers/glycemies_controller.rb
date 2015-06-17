@@ -32,7 +32,7 @@ class GlycemiesController < ApplicationController
 
   def create
     @glycemy = Glycemy.new(glycemy_params)
-    @glycemy.save
+    #@glycemy.save
     @user = current_user
     @glycemy.set_user!(current_user)
     @glycemy.user_id = current_user.id
@@ -44,7 +44,8 @@ class GlycemiesController < ApplicationController
 
   
   def import
-    Glycemy.import(params[:file])
+    Glycemy.import(params[:file].path)
+
     redirect_to root_url, notice: "Glycemies imported."
   end
 

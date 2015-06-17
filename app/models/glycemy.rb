@@ -12,12 +12,16 @@ def set_user!(user)
 end
  
 def self.import(file)
-	
-	CSV.foreach(:file, :headers => true) do |row|
-		date = row[0].to_datetime
-		valeur = row[1].to_i
-		userid = current_user.id
-		Glycemy.create(date: date, valeur: valeur, user_id: userid)
+	#filename = file.csv.path
+	CSV.foreach(file) do |row|
+		#date = row[1]
+		#valeur = row[3]
+		date, valeur, app, a, b, c, d, e, f, g, h, i, j, k, l = row
+		#jourheure = Datetime.new(jour.year, jour.month, jour.day, heure.hour, heure.min,)
+		#userid = current_user.id
+		glycemy = Glycemy.create!(date: jour, valeur: valeur)
+
+	end
 	#spreadsheet = open_spreadsheet(file)
 	#header = spreadsheet.row(5)
 	
@@ -32,7 +36,8 @@ def self.import(file)
 	#row = Hash[[header, spreadsheet.row(i)].transpose]
 	#glycemy.attributes = row.to_hash.slice(*accessible_attributes)
 	#glycemy.save!
-end
+#flash[:notice]= "New glycemies added"
+
 end
 
 #	CSV.forearch(file.path) do |row|

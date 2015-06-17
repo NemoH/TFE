@@ -9,3 +9,9 @@
 <h3>% in the zone</h3>
 
 <%= pie_chart Glycemy.where(:user_id => current_user.id).group(:hyper).group(:hypo).count %>
+
+insuline
+
+<%= area_chart [
+	{name: "Insuline", data: Insuline.where(:user_id => current_user.id).group_by_day(:date, last: 8).sum(:unit) },
+	{name: "Carb", data: Carb.where(:user_id => current_user.id).group_by_day(:date, last: 8).sum(:valeur)} ] %>

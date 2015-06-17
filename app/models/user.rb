@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :oculistes
   has_many :prisedesangs
   has_many :results
+  has_many :carbs
 	validates :password, presence: true,
 	length: {minimum: 8}
 	validates :email, presence: true
