@@ -1,0 +1,2 @@
+module GraphsmonthHelper
+end

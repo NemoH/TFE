@@ -17,7 +17,29 @@
     <div class="panel-body"></br></br>Diabetes tracker is a free web app that can help you manage your diabetes. </br> </br> 
     You can track your glycemies, injections, injection sites, appointments and more and then analyze your data with some cool graphs!</br></br>
     It's adapted to all your device, you can for example add your data on the go via your phone, upload CSV of your old data on the computer and show your results to your family and doctors with your tablet! It's all synchronized to your account and it works on all platform! </br> </br>
-    Just sign up and start using this app for free!</div>
+    You can either use this website as a demo of the app or host it yourself on your own web server, or for example on your raspberry Pi if you don't want to upload your data on a unknown website. </br>  </br>
+    Just sign up and start using this app for free!</br> </br>
+    <h2> How to install on a raspberry pi 2</h2>
+    The installation is quite simple but will take some time, it only takes a few minutes to launch the installation and then you just have to let it run for a few hours to have it working.
+    <h3> Installing Raspbian</h3>
+    If it's not yet installed, simply follow the official guide : </br>
+    <a href="https://www.raspberrypi.org/documentation/installation/installing-images/">https://www.raspberrypi.org/documentation/installation/installing-images/</a>
+    <h3> Installing Rails</h3>
+    Follow this easy guide : </br>
+    <a href"http://computers.tutsplus.com/tutorials/how-to-install-ruby-on-rails-on-raspberry-pi--cms-21421">http://computers.tutsplus.com/tutorials/how-to-install-ruby-on-rails-on-raspberry-pi--cms-21421</a>
+    /!\ It will take ~3 hours to complete the install /!\
+    <h3> Launching the app</h3>
+    Download the repository from github from this link : </br>
+    <a href="https://github.com/NemoH/TFE">https://github.com/NemoH/TFE</a> </br>
+    Once it's done, unzip the file in a new folder and then open up a terminal window and run these commands: </br>
+    &nbsp;&nbsp;&nbsp;&nbsp;	cd *name of the folder*  // to go in your folder </br>
+    &nbsp;&nbsp;&nbsp;&nbsp;	bundle install  // to install the app </br>
+    &nbsp;&nbsp;&nbsp;&nbsp;	rake db:migrate   // to migrate the tables to your database</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;	rails s   // to start the webserver</br>
+    And it should be running! </br>
+    If you have a dynamic IP you need to install Noip2 to have it working, just follow this simple tutorial on how to install it: </br>
+    <a href="http://raspberrypihelp.net/tutorials/29-raspberry-pi-no-ip-tutorial">http://raspberrypihelp.net/tutorials/29-raspberry-pi-no-ip-tutorial</a>
+    </div>
 
 </div>
 </body>

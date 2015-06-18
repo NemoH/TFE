@@ -1,0 +1,16 @@
+<h1>Insuline Carbs ratio</h1>
+<h2>last week</h2>
+
+<%= area_chart [
+	{name: "Insuline", data: Insuline.where(:user_id => current_user.id).group_by_day(:date, last: 7).sum(:unit) },
+	{name: "Carb", data: Carb.where(:user_id => current_user.id).group_by_day(:date, last: 7).sum(:valeur)} ] %>
+<h2>last month</h2>
+
+<%= area_chart [
+	{name: "Insuline", data: Insuline.where(:user_id => current_user.id).group_by_day(:date, last: 30).sum(:unit) },
+	{name: "Carb", data: Carb.where(:user_id => current_user.id).group_by_day(:date, last: 30).sum(:valeur)} ] %>
+<h2>last year</h2>
+
+<%= area_chart [
+	{name: "Insuline", data: Insuline.where(:user_id => current_user.id).group_by_day(:date, last: 365).sum(:unit) },
+	{name: "Carb", data: Carb.where(:user_id => current_user.id).group_by_day(:date, last: 365).sum(:valeur)} ] %>

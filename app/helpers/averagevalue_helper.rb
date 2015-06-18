@@ -1,0 +1,2 @@
+module AveragevalueHelper
+end

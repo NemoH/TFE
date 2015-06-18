@@ -56,7 +56,7 @@
               
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Glycemies<b class="caret"></b></a>
               <ul class="dropdown-menu">
-              <li><%= link_to "Show", "/glycemies"  %></li>
+              <li><%= link_to "Show all", "/glycemies"  %></li>
               <li><%= link_to "New", "/glycemies/new"  %></li>
               </ul></li>
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Insulines<b class="caret"></b></a>
@@ -64,8 +64,15 @@
               <li><%= link_to "Show all", "/insulines"  %></li>
               <li><%= link_to "New", "/insulines/new"  %></li>
               </ul></li>
+              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Graphs<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><%= link_to "Graphs for last week", "/graphs/hello"  %></li>
+              <li><%= link_to "Graphs for last month", "/graphsmonth/index"  %></li>
+              <li><%= link_to "Insuline-carb ratio", "/insucarb/index"  %></li>
+              <li><%= link_to "Tests per day", "/testperday/index"  %></li>
+              <li><%= link_to "Average value", "/averagevalue/index"  %></li>
+              </ul></li>
 
-              <li><%= link_to "Graphs", "/graphs/hello"  %></li>
               <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Notes<b class="caret"></b></a>
               <ul class="dropdown-menu">
               <li><%= link_to "Show all", "/articles"  %></li>

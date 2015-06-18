@@ -1,4 +1,8 @@
 Tfe2::Application.routes.draw do
+  get "graphsmonth/index"
+  get "averagevalue/index"
+  get "testperday/index"
+  get "insucarb/index"
   resources :carbs
 
   get "injectionother/hello"

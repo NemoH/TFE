@@ -1,0 +1,7 @@
+<h1>Average value per day</h1>
+<h2>Last week</h2>
+<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 7).average(:valeur), {library: {hAxis: {title: "Date", format: 'd MMM y'}, vAxis: {title: "Average"}}} %>
+<h2>Last month</h2>
+<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 30).average(:valeur), {library: {hAxis: {title: "Date", format: 'd MMM y'}, vAxis: {title: "Average"}}} %>
+<h2>Last year</h2>
+<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 365).average(:valeur), {library: {hAxis: {title: "Date", format: 'd MMM y'}, vAxis: {title: "Average"}}} %>

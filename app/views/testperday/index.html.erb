@@ -1,0 +1,7 @@
+<h1>Number of tests per day</h1>
+<h2>Last week</h2>
+<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 7).count %>
+<h2>Last month</h2>
+<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 30).count %>
+<h2>Last year</h2>
+<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 365).count %>

@@ -1,17 +1,20 @@
-<h1>Graphs#hello</h1>
+<h1>Graphs recap for last week</h1>
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-<h3>Number of tests per day</h3>
-<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date).count %>
-<h3>Average value of the tests per day</h3>
+<h2>Number of tests per day</h2>
+<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 7).count %>
+<h2>Average value of the tests per day</h2>
 
-<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date).average(:valeur), {library: {hAxis: {title: "Date", format: 'd MMM y'}, vAxis: {title: "Average"}}} %>
+<%= area_chart Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 7).average(:valeur), {library: {hAxis: {title: "Date", format: 'd MMM y'}, vAxis: {title: "Average"}}} %>
 
-<h3>% in the zone</h3>
+<h2>Hyper/Hypoglycemia per day</h2>
 
-<%= pie_chart Glycemy.where(:user_id => current_user.id).group(:hyper).group(:hypo).count %>
+<%= line_chart [
+	{name: "Hyper", data: Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 7).count(:hyper)},
+	{name: "Hypo", data: Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 7).count(:hypo)},
+	] %>
 
-insuline
+<h2>Insuline-Carb ratio</h2>
 
 <%= area_chart [
-	{name: "Insuline", data: Insuline.where(:user_id => current_user.id).group_by_day(:date, last: 8).sum(:unit) },
-	{name: "Carb", data: Carb.where(:user_id => current_user.id).group_by_day(:date, last: 8).sum(:valeur)} ] %>
+	{name: "Insuline", data: Insuline.where(:user_id => current_user.id).group_by_day(:date, last: 7).sum(:unit) },
+	{name: "Carb", data: Carb.where(:user_id => current_user.id).group_by_day(:date, last: 7).sum(:valeur)} ] %>
