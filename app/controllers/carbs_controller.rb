@@ -4,7 +4,9 @@ class CarbsController < ApplicationController
   respond_to :html
 
   def index
-    @carbs = Carb.all
+    @carbs = Carb.where(:user_id => current_user.id).page(params[:page]).per(30)
+
+    #@carbs = Carb.all
     respond_with(@carbs)
   end
   def new

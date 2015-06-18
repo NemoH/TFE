@@ -97,9 +97,7 @@
 
             <li><%= link_to "other", "/injectionother/hello"  %></li>
 
-            <li class="divider"></li>
-
-            <li><%= link_to "Results", "/results"  %></li>
+    
 
         </ul> </li>
               
@@ -107,7 +105,7 @@
               
                   <li class="dropdown">
 
-        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Appoitments&results <b class="caret"></b></a>
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Others <b class="caret"></b></a>
 
         <ul class="dropdown-menu">
 
@@ -120,6 +118,8 @@
             <li class="divider"></li>
 
             <li><%= link_to "Results", "/results"  %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+    <li><%= link_to "edit profile", edit_user_registration_path, :class => 'navbar-ling' %></li>
 
         </ul> </li>
               <%= render 'layouts/user_header' %>

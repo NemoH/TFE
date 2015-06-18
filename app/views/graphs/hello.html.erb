@@ -9,8 +9,8 @@
 <h2>Hyper/Hypoglycemia per day</h2>
 
 <%= line_chart [
-	{name: "Hyper", data: Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 7).count(:hyper)},
 	{name: "Hypo", data: Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 7).count(:hypo)},
+	{name: "Hyper", data: Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 7).count(:hyper)},
 	] %>
 
 <h2>Insulin-Carb ratio</h2>

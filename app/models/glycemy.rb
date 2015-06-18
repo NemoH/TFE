@@ -1,6 +1,5 @@
 class Glycemy < ActiveRecord::Base
-require 'csv'
-require 'roo'
+
 
 belongs_to :user
 validates :valeur, presence: true,
@@ -14,12 +13,10 @@ end
 def self.import(file)
 	#filename = file.csv.path
 	CSV.foreach(file) do |row|
-		#date = row[1]
-		#valeur = row[3]
-		date, valeur, app, a, b, c, d, e, f, g, h, i, j, k, l = row
-		#jourheure = Datetime.new(jour.year, jour.month, jour.day, heure.hour, heure.min,)
-		#userid = current_user.id
-		glycemy = Glycemy.create!(date: jour, valeur: valeur)
+
+		date, valeur, app = row
+	
+		glycemy = Glycemy.create(date: date, valeur: valeur)
 
 	end
 	#spreadsheet = open_spreadsheet(file)
