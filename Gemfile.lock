@@ -49,6 +49,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.5.2)
+    faker (1.4.3)
+      i18n (~> 0.5)
     groupdate (2.1.1)
       activerecord (>= 3.0.0)
     hike (1.2.3)
@@ -84,6 +86,7 @@ GEM
     orm_adapter (0.5.0)
     pg (0.18.2)
     polyglot (0.3.5)
+    populator (1.0.0)
     rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -160,6 +163,7 @@ DEPENDENCIES
   chartkick
   coffee-rails (~> 4.0.0)
   devise
+  faker
   groupdate (~> 2.1.1)
   jbuilder (~> 1.2)
   jquery-rails
@@ -167,6 +171,7 @@ DEPENDENCIES
   less-rails
   mysql2
   pg
+  populator
   rails (= 4.0.2)
   roo
   sass-rails (~> 4.0.0)

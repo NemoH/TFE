@@ -67,3 +67,5 @@ gem 'roo'
 
 gem 'kaminari'
 
+gem 'faker'
+gem 'populator'

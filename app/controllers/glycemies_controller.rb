@@ -8,7 +8,7 @@ class GlycemiesController < ApplicationController
 
   def index
     #@glycemies = Glycemy.all
-    @glycemies = Glycemy.where(:user_id => current_user.id).page(params[:page]).per(10)
+    @glycemies = Glycemy.where(:user_id => current_user.id).page(params[:page]).per(30)
 
     respond_with(@glycemies)
   end
