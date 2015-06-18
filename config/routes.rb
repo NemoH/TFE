@@ -1,4 +1,5 @@
 Tfe2::Application.routes.draw do
+  get "hbgraph/index"
   get "graphsmonth/index"
   get "averagevalue/index"
   get "testperday/index"

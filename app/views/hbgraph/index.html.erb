@@ -1,0 +1,4 @@
+<h1>Graph recap for the HbA1c</h1>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<h2>History for the HbA1c</h2>
+<%= column_chart Result.where(:user_id => current_user.id).group_by_month(:date, last: 24).average(:hb) %>

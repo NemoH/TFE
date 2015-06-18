@@ -13,7 +13,7 @@
 	{name: "Hypo", data: Glycemy.where(:user_id => current_user.id).group_by_day(:date, last: 7).count(:hypo)},
 	] %>
 
-<h2>Insuline-Carb ratio</h2>
+<h2>Insulin-Carb ratio</h2>
 
 <%= area_chart [
 	{name: "Insuline", data: Insuline.where(:user_id => current_user.id).group_by_day(:date, last: 7).sum(:unit) },
