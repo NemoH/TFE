@@ -3,7 +3,7 @@
 <p>
 <%= form_tag glycemies_path, :method => 'get', :id => "products_search" do %>
   
-    <%= date_field_tag :search, params[:search] %>
+    <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search on dates", :name => nil %>
   
  <% end %>
