@@ -1,5 +1,6 @@
 class Glycemy < ActiveRecord::Base
-
+require 'csv'
+attr_accessor :glycemy_user
 
 belongs_to :user
 validates :valeur, presence: true,
@@ -10,13 +11,46 @@ def set_user!(user)
   	self.save!
 end
  
+def save_with_a_user
+	set_user!(glycemy_user)
+	user_id = glycemy_user.id
+	save!
+end
+
+def self.search(search)
+	if search
+		where('date LIKE ?', "%#{search}%")
+	else
+		scoped
+	end
+end
+
+def self.search2(search2)
+	if search2
+		where('note LIKE ?', "%#{search2}%")
+	else
+		scoped
+	end
+end
+
 def self.import(file)
 	#filename = file.csv.path
-	CSV.foreach(file) do |row|
-
-		date, valeur, app = row
 	
-		glycemy = Glycemy.create(date: date, valeur: valeur)
+	CSV.foreach(file.path, headers: true) do |row|
+		glycemy_hash = row.to_hash
+		@glycemy = Glycemy.new(glycemy_hash)
+    	
+    	
+		@glycemy.user_id = current_user
+		@glycemy.save_with_a_user
+
+		#self.user_id = user.id
+		#Glycemy.user_id = self.user_id
+		#Glycemy.save
+		#Glycemy.create!(glycemy_hash)
+		
+	
+		#glycemy = Glycemy.create(date: date, valeur: valeur)
 
 	end
 	#spreadsheet = open_spreadsheet(file)

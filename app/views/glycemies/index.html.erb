@@ -1,21 +1,32 @@
 <%- model_class = Glycemy -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_glycemy_path,
-            :class => 'btn btn-primary' %>
 
+<p>
+<%= form_tag glycemies_path, :method => 'get', :id => "products_search" do %>
+  
+    <%= date_field_tag :search, params[:search] %>
+    <%= submit_tag "Search on dates", :name => nil %>
+  
+ <% end %>
+
+<%= form_tag glycemies_path, :method => 'get', :id => "products_search" do %>
+  
+    <%= text_field_tag :search2, params[:search] %>
+    <%= submit_tag "Search on notes", :name => nil %>
+  
+ 
+<% end %>
+
+</p>
 <%= paginate @glycemies %>
 <table class="table table-striped">
   <thead>
     <tr>
 
      <!-- <th><%= model_class.human_attribute_name(:id) %></th>-->
-      <th><%= model_class.human_attribute_name(:valeur) %></th>
-      <th><%= model_class.human_attribute_name(:note) %></th>
+      <th><%= sortable "valeur" %></th>
+      <th><%= sortable "note" %></th>
       <!--<th><%= model_class.human_attribute_name(:user_id) %></th>-->
-      <th><%= model_class.human_attribute_name(:date) %></th>
+      <th><%= sortable "date" %></th>
       
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -34,11 +45,11 @@
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_glycemy_path(glycemy), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <!--<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       glycemy_path(glycemy),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+                      :class => 'btn btn-mini btn-danger' %>-->
         </td>
       </tr>
     <% end %>
@@ -52,3 +63,8 @@
 <h2> Import glycemies </h2>
 
 Not available in the demo version, if you want to import your data from your readers please install the app on your own web server.
+
+<%= form_tag import_glycemies_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>

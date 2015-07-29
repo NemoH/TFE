@@ -1,21 +1,31 @@
 class GlycemiesController < ApplicationController
   before_filter :authenticate_user!
   before_action :set_glycemy, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
   respond_to :html
   X_VALUE = 180
   Y_VALUE = 80
 
   def index
     #@glycemies = Glycemy.all
-    @glycemies = Glycemy.where(:user_id => current_user.id).page(params[:page]).per(30)
+    @glycemies = Glycemy.search(params[:search]).search2(params[:search2]).where(:user_id => current_user.id).order(sort_column + '  ' + sort_direction).page(params[:page]).per(30)
 
     respond_with(@glycemies)
+  end
+
+  def sort_column
+    Glycemy.column_names.include?(params[:sort]) ? params[:sort] : "date"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
   def new
     @ask.user_id = current_user.id
   end
+
+
 
   def show
 
@@ -33,9 +43,11 @@ class GlycemiesController < ApplicationController
   def create
     @glycemy = Glycemy.new(glycemy_params)
     #@glycemy.save
-    @user = current_user
-    @glycemy.set_user!(current_user)
-    @glycemy.user_id = current_user.id
+    #@user = current_user
+    #@glycemy.set_user!(current_user)
+    #@glycemy.user_id = current_user.id
+    @glycemy.glycemy_user = current_user
+    @glycemy.save_with_a_user
     @glycemy.hyper = true if @glycemy.valeur > X_VALUE
     @glycemy.hypo = true if @glycemy.valeur < Y_VALUE
     @glycemy.save
@@ -44,8 +56,9 @@ class GlycemiesController < ApplicationController
 
   
   def import
-    Glycemy.import(params[:file].path)
+    Glycemy.import(params[:file])
 
+@glycemy.glycemy_user = current_user
     redirect_to root_url, notice: "Glycemies imported."
   end
 
