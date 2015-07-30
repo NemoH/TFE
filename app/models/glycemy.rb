@@ -33,7 +33,7 @@ def self.search2(search2)
 	end
 end
 
-def self.import(file)
+def self.import(file, user)
 	#filename = file.csv.path
 	
 	CSV.foreach(file.path, headers: true) do |row|
@@ -41,8 +41,8 @@ def self.import(file)
 		@glycemy = Glycemy.new(glycemy_hash)
     	
     	
-		@glycemy.user_id = current_user
-		@glycemy.save_with_a_user
+		@glycemy.user_id = user.id
+		@glycemy.save!
 
 		#self.user_id = user.id
 		#Glycemy.user_id = self.user_id

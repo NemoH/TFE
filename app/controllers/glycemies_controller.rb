@@ -56,9 +56,9 @@ class GlycemiesController < ApplicationController
 
   
   def import
-    Glycemy.import(params[:file])
+    Glycemy.import(params[:file], current_user)
 
-@glycemy.glycemy_user = current_user
+
     redirect_to root_url, notice: "Glycemies imported."
   end
 
