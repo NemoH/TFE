@@ -38,12 +38,17 @@ def self.import(file, user)
 	
 	CSV.foreach(file.path, headers: true) do |row|
 		glycemy_hash = row.to_hash
+		glycemy = Glycemy.where(date: glycemy_hash["date"])
+
+		if glycemy.count == 1
+			glycemy.first.update_attributes(glycemy_hash)
+		else
 		@glycemy = Glycemy.new(glycemy_hash)
     	
     	
 		@glycemy.user_id = user.id
 		@glycemy.save!
-
+	end
 		#self.user_id = user.id
 		#Glycemy.user_id = self.user_id
 		#Glycemy.save
