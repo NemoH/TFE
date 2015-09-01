@@ -1,12 +1,7 @@
 <%- model_class = Glycemy -%>
 
 <p>
-<%= form_tag glycemies_path, :method => 'get', :id => "products_search" do %>
-  
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search on dates", :name => nil %>
-  
- <% end %>
+
 
 <%= form_tag glycemies_path, :method => 'get', :id => "products_search" do %>
   
@@ -61,8 +56,6 @@
 
 
 <h2> Import glycemies </h2>
-
-Not available in the demo version, if you want to import your data from your readers please install the app on your own web server.
 
 <%= form_tag import_glycemies_path, multipart: true do %>
   <%= file_field_tag :file %>

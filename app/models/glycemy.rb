@@ -4,7 +4,8 @@ attr_accessor :glycemy_user
 
 belongs_to :user
 validates :valeur, presence: true,
-			length: {maximum: 4}
+			length: {maximum: 4},
+			inclusion: {in: 0..600}
 validates :note, length: {maximum: 250}
 def set_user!(user)
   	self.user_id = user.id
